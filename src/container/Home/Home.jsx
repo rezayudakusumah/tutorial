@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route} from 'react-router-dom';
 import Navbar from '../../component/Navbar/Navbar';
-import NumberTrianglePage from '../Pages/NumberTrianglePage/NumberTrianglePage';
-import PalyndromePage from '../Pages/PalyndromePage/PalyndromePage';
-import StarTrianglePage from '../Pages/StarTrianglePage/StarTrianglePage';
+import CaseOnePage from '../Pages/CaseOnePage/CaseOnePage';
+import CaseThreePage from '../Pages/CaseThreePage/CaseThreePage';
+import CaseTwoPage from '../Pages/CaseTwoPage/CaseTwoPage';
+import CaseFivePage from '../Pages/CaseFivePage/CaseFivePage';
+import CaseFourPage from '../Pages/CaseFourPage/CaseFourPage';
 
 class Home extends Component {
     render(){
@@ -11,9 +13,11 @@ class Home extends Component {
             <BrowserRouter>
                 <Navbar />
 
-                <Route path="/" exact component={PalyndromePage}></Route>
-                <Route path="/star" component={StarTrianglePage}></Route>
-                <Route path="/number" component={NumberTrianglePage}></Route>
+                <Route path="/" component={CaseOnePage}></Route>
+                <Route path="/casetwo" component={CaseTwoPage}></Route>
+                <Route path="/casethree" component={CaseThreePage}></Route>
+                <Route path="/caseFour" component={CaseFourPage}></Route>
+                <Route path="/casefive" component={CaseFivePage}></Route>
             </BrowserRouter>
         )
     }

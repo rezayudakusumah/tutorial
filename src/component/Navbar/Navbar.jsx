@@ -4,9 +4,11 @@ import {Link} from 'react-router-dom';
 const Navbar = () => {
     return (
         <div className="navbar navbar-expand-lg navbar-light bg-light">
-            <Link to="/">Palyndrome</Link>
-            <Link to="/star">StarTriangle</Link>
-            <Link to="/number">NumberTriangle</Link>
+            <Link to="/">Case One</Link>
+            <Link to="/casetwo">Case two</Link>
+            <Link to="/casethree">Case Three</Link>
+            <Link to="/casefour">Case Four</Link>
+            <Link to="/casefive">Case Five</Link>      
         </div>
     )
 }
