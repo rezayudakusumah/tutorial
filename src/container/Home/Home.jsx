@@ -13,7 +13,7 @@ class Home extends Component {
             <BrowserRouter>
                 <Navbar />
 
-                <Route path="/" component={CaseOnePage}></Route>
+                <Route path="/" exact component={CaseOnePage}></Route>
                 <Route path="/casetwo" component={CaseTwoPage}></Route>
                 <Route path="/casethree" component={CaseThreePage}></Route>
                 <Route path="/caseFour" component={CaseFourPage}></Route>

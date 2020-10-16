@@ -8,9 +8,8 @@ class CaseOnePage extends Component {
     }
 
     handleChange = (event) => {
-        // console.log(event.target.value);
         let inputNew = event.target.value;
-        // console.log(this.state.input)
+        
         this.setState({
             input: inputNew
         })
@@ -20,11 +19,17 @@ class CaseOnePage extends Component {
 
         let vowel = ['a', 'u', 'e', 'o'];
         let outputNew = this.state.input;
+        let outputFinal = [];
+
+        for(let i = 0; i < vowel.length; i++) {
+            outputFinal = outputNew.replaceAll(vowel[i], 'i');
+            outputNew = outputFinal;
+        }
         
-        let outputFinal = outputNew.replace('a', 'i');
+        // console.log(outputNew);
 
         this.setState({
-            output: outputFinal
+            output: outputNew
         })
     }
 

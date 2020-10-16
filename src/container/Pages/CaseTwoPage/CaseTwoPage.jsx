@@ -3,8 +3,10 @@ import React, { Component, Fragment } from 'react';
 class CaseTwoPage extends Component {
 
     state = {
-        rudy: [],
-        ani: []
+        rudy: [8, 7, 6, 9],
+        ani: [5, 8, 9, 6],
+        rudyPoint: '',
+        aniPoint: ''
     }
 
     handleChange = (event) => {
@@ -17,50 +19,35 @@ class CaseTwoPage extends Component {
 
     handleSubmit = () => {
 
-        let output = this.state.input;
-        // console.log(output);
-        let outputSplit = output.split("");
-        let outputReverse = outputSplit.reverse();
-        let outputJoin = outputReverse.join("");
-        // console.log(outputReverse);
+        let rudyScore = 0;
+        let aniScore = 0;
 
-        if(output == outputJoin) {
-            this.setState({
-                output: 'benar'
-            })
+        for(let i = 0; i < this.state.rudy.length; i++){
+            if(this.state.rudy[i] > this.state.ani[i]){
+                rudyScore = rudyScore + 1
+            }
+            else{
+                aniScore = aniScore + 1
+            }
         }
 
-        else {
-            this.setState({
-                output: 'salah'
-            })
-        }
+        // console.log(rudyScore);
+        // console.log(aniScore);
 
+        this.setState({
+            rudyPoint: rudyScore,
+            aniPoint: aniScore
+        })
     }
 
     render(){
         return (
             <Fragment>
-                <h2>Rudy</h2>
-                <label>Sejarah :</label>
-                <input type="text" className="form-control" name="input[1]" onChange={this.handleChange} />
-                <label>Matematika :</label>
-                <input type="text" className="form-control" name="input[2]" onChange={this.handleChange} />
-                <label>Sosiologi :</label>
-                <input type="text" className="form-control" name="input[3]" onChange={this.handleChange} />
-                <label>Kewarganegaraan :</label>
-                <input type="text" className="form-control" name="input[4]" onChange={this.handleChange} />
-                {/* <h2>Ani</h2>
-                <label>Sejarah :</label>
-                <input type="text" className="form-control" name="input-letter" onChange={this.handleChange} />
-                <label>Matematika :</label>
-                <input type="text" className="form-control" name="input-letter" onChange={this.handleChange} />
-                <label>Sosiologi :</label>
-                <input type="text" className="form-control" name="input-letter" onChange={this.handleChange} />
-                <label>Kewarganegaraan :</label>
-                <input type="text" className="form-control" name="input-letter" onChange={this.handleChange} /> */}
+                <p>Data Nilai Rudy: {this.state.rudy}</p>
+                <p>Data Nilai Ani:{this.state.ani}</p>
                 <button onClick={this.handleSubmit}>Submit</button>
-                <p>{this.state.output}</p>
+                <p>Rudy Point: {this.state.rudyPoint}</p>
+                <p>Ani Point: {this.state.aniPoint}</p>
             </Fragment>
         )
     }
