@@ -6,6 +6,7 @@ import CaseThreePage from '../Pages/CaseThreePage/CaseThreePage';
 import CaseTwoPage from '../Pages/CaseTwoPage/CaseTwoPage';
 import CaseFivePage from '../Pages/CaseFivePage/CaseFivePage';
 import CaseFourPage from '../Pages/CaseFourPage/CaseFourPage';
+import CaseSixPage from '../Pages/CaseSixPage/CaseSixPage';
 
 class Home extends Component {
     render(){
@@ -18,6 +19,7 @@ class Home extends Component {
                 <Route path="/casethree" component={CaseThreePage}></Route>
                 <Route path="/caseFour" component={CaseFourPage}></Route>
                 <Route path="/casefive" component={CaseFivePage}></Route>
+                <Route path="/casesix" component={CaseSixPage}></Route>
             </BrowserRouter>
         )
     }
